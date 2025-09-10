@@ -27,8 +27,7 @@ import { RouterLink } from 'vue-router'
           tabindex="0"
           class="menu menu-sm dropdown-content bg-base-200 rounded-box z-1 mt-3 w-52 p-2 shadow"
         >
-          <li><RouterLink to="/bwi">BWI</RouterLink></li>
-          <li><RouterLink to="/bwl">BWL</RouterLink></li>
+          <li><RouterLink to="/lection">Lections</RouterLink></li>
         </ul>
       </div>
     </div>
