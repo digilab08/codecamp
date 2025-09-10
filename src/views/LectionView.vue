@@ -66,7 +66,11 @@ function breadcrumbsObj(pathArr = []) {
 }
 </script>
 <template>
-  <Breadcrumbs :items="breadcrumbs"></Breadcrumbs>
-  <SubSitesOverview v-if="isFolder" :items="currentContent" />
-  <MarkdownViewer v-else :source="currentMd" />
+  <div class="w-full flex flex-col items-center">
+    <div class="flex flex-col gap-3 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 2xl:w-2/5">
+      <Breadcrumbs :items="breadcrumbs"></Breadcrumbs>
+      <SubSitesOverview v-if="isFolder" :items="currentContent" />
+      <MarkdownViewer v-else :source="currentMd" />
+    </div>
+  </div>
 </template>
