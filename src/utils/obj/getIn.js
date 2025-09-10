@@ -6,7 +6,6 @@
  * @returns {*|undefined}
  */
 export function objGetIn(obj, path = []) {
-  console.log({ obj, path })
   let current = obj
 
   for (const key of path) {
