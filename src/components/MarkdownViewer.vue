@@ -2,6 +2,7 @@
 import MarkdownIt from 'markdown-it'
 import hljsPlugin from 'markdown-it-highlightjs'
 import DOMPurify from 'dompurify'
+import { computed } from 'vue'
 
 const props = defineProps({
   source: { type: String, required: true },
@@ -10,8 +11,11 @@ const props = defineProps({
 })
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: true }).use(hljsPlugin)
-let renderedHtml = md.render(props.source)
-if (props.sanitize) renderedHtml = DOMPurify.sanitize(renderedHtml)
+const renderedHtml = computed(() => {
+  let html = md.render(props.source)
+  if (props.sanitize) html = DOMPurify.sanitize(html)
+  return html
+})
 </script>
 
 <template>
