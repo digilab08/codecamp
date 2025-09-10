@@ -3,6 +3,7 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import MarkdownViewer from '@/components/MarkdownViewer.vue'
 import Breadcrumbs from '@/components/Breadcrumbs.vue'
+import SubSitesOverview from '@/components/SubSitesOverview.vue'
 import { objMap } from '@/utils/obj/map.js'
 import { pathsToTree } from '@/utils/pathsToTree'
 import { objGetIn } from '@/utils/obj/getIn'
@@ -24,6 +25,21 @@ const currentContent = computed(() => {
   return objGetIn(mdTree, routeArray.value)
 })
 
+const currentMd = ref('')
+watch(
+  currentContent,
+  async (newContent) => {
+    if (typeof newContent === 'function') {
+      const fileObj = await newContent()
+      currentMd.value = fileObj.default
+    } else {
+      currentMd.value = ''
+    }
+    console.log('Content changed:', currentMd.value)
+  },
+  { immediate: true },
+)
+
 const isFolder = computed(() => {
   return typeof currentContent.value === 'object'
 })
@@ -31,6 +47,7 @@ const isFolder = computed(() => {
 const breadcrumbs = computed(() => {
   return breadcrumbsObj(routeArray.value)
 })
+console.log(currentContent.value)
 
 function nameCleanup(name) {
   name = name.replace(/_/g, ' ')
@@ -50,4 +67,6 @@ function breadcrumbsObj(pathArr = []) {
 </script>
 <template>
   <Breadcrumbs :items="breadcrumbs"></Breadcrumbs>
+  <SubSitesOverview v-if="isFolder" :items="currentContent" />
+  <MarkdownViewer v-else :source="currentMd" />
 </template>
