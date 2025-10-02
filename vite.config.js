@@ -17,9 +17,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon-196.ico', 'robots.txt', 'apple-icon-180.png'],
       manifest: {
-        name: 'vue-default',
-        short_name: 'vue-default',
-        description: 'vue-default',
+        name: 'CodeCamp',
+        short_name: 'CodeCamp',
+        description: 'CodeCamp - Programmieren lernen',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
