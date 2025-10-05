@@ -35,8 +35,6 @@ const itemsArray = computed(() => {
   })
 })
 
-console.log(itemsArray.value)
-
 function getIcon(isFolder) {
   return isFolder ? 'folder' : 'article'
 }

@@ -35,7 +35,6 @@ watch(
     } else {
       currentMd.value = ''
     }
-    console.log('Content changed:', currentMd.value)
   },
   { immediate: true },
 )
@@ -47,7 +46,6 @@ const isFolder = computed(() => {
 const breadcrumbs = computed(() => {
   return breadcrumbsObj(routeArray.value)
 })
-console.log(currentContent.value)
 
 function nameCleanup(name) {
   name = name.replace(/_/g, ' ')
