@@ -61,8 +61,8 @@ Siehe: [Die \<a\> Attribute](https://developer.mozilla.org/de/docs/Web/HTML/Elem
 ```
 
 |     |           |                                     |
-| --- | --------- | ----------------------------------- | ------- |
-|     | `src`     | Erforderlich, Bild-Ort \*(URL       | Pfad)\* |
+| --- | --------- | ----------------------------------- |
+|     | `src`     | Erforderlich, Bild-Ort              |
 |     | `alt`     | Beschreibung des Bildes             |
 |     | `width`   | Breite des Bildes                   |
 |     | `height`  | Höhe des Bildes                     |
@@ -347,10 +347,10 @@ Your browser does not support the audio element.
 | [`<td>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/td)             | Definiert eine Zelle in einer Tabelle           |
 | [`<caption>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/caption)   | Definiert eine Tabellenüberschrift              |
 | [`<colgroup>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/colgroup) | Definiert eine Gruppe von Spalten               |
-| [`<col>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/col)%3E>       | Definiert eine Spalte innerhalb einer Tabelle   |
-| [`<thead>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/thead)%3E>   | Gruppiert den Kopfzeileninhalt                  |
-| [`<tbody>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/tbody)%3E>   | Gruppiert den Hauptinhalt                       |
-| [`<tfoot>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/tfoot)%3E>   | Gruppiert den Fußzeileninhalt                   |
+| [`<col>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/col)           | Definiert eine Spalte innerhalb einer Tabelle   |
+| [`<thead>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/thead)       | Gruppiert den Kopfzeileninhalt                  |
+| [`<tbody>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/tbody)       | Gruppiert den Hauptinhalt                       |
+| [`<tfoot>`](https://developer.mozilla.org/de/docs/Web/HTML/Element/tfoot)       | Gruppiert den Fußzeileninhalt                   |
 
 ### `<td>` Attribute
 
@@ -364,13 +364,13 @@ Siehe: [td\#Attribute](https://developer.mozilla.org/de/docs/Web/HTML/Element/td
 
 ### `<th>` Attribute
 
-| Attribut                                                                                                                                                      | Beschreibung                                                        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `colspan`                                                                                                                                                     | Anzahl der Spalten, die eine Zelle umfassen soll                    |
-| `headers`                                                                                                                                                     | Eine oder mehrere Kopfzeilenzellen, auf die sich eine Zelle bezieht |
-| `rowspan`                                                                                                                                                     | Anzahl der Zeilen, die eine Zelle umfassen soll                     |
-| `abbr`                                                                                                                                                        | Beschreibung des Zelleninhalts                                      |
-| [`scope`](<https://developer.mozilla.org/de/docs/Web/HTML/Element/th#attr-scope%5D(https://developer.mozilla.org/de/docs/Web/HTML/Element/th#attr-scope)%3E>) | Gibt an, worauf sich die Kopfzeile bezieht                          |
+| Attribut                                                                        | Beschreibung                                                        |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `colspan`                                                                       | Anzahl der Spalten, die eine Zelle umfassen soll                    |
+| `headers`                                                                       | Eine oder mehrere Kopfzeilenzellen, auf die sich eine Zelle bezieht |
+| `rowspan`                                                                       | Anzahl der Zeilen, die eine Zelle umfassen soll                     |
+| `abbr`                                                                          | Beschreibung des Zelleninhalts                                      |
+| [`scope`](https://developer.mozilla.org/de/docs/Web/HTML/Element/th#attr-scope) | Gibt an, worauf sich die Kopfzeile bezieht                          |
 
 Siehe: [th\#Attribute](https://developer.mozilla.org/de/docs/Web/HTML/Element/th#attribute)
 
