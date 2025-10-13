@@ -6,6 +6,30 @@ JavaScript ist eine leichtgewichtige, interpretierte Programmiersprache.
 
 ---
 
+### JavaScript in HTML
+
+```html
+<button onclick="geklickt()">Klick Mich</button>
+<script type="text/javascript">
+  function geklickt() {
+    let text = 'Hallo QuickRef.ME'
+    alert(text)
+  }
+</script>
+```
+
+#### Externes JavaScript
+
+```html
+<body>
+  ...
+
+  <script src="app.js"></script>
+</body>
+```
+
+---
+
 ### Konsole
 
 ```javascript
