@@ -136,44 +136,6 @@ Diese Tags werden verwendet, um deine Seite in Abschnitte zu unterteilen.
 
 Siehe: [Das Inline-Frame-Element (iframe)](https://developer.mozilla.org/de/docs/Web/HTML/Element/iframe)
 
-### JavaScript in HTML
-
-```html
-<script type="text/javascript">
-  let text = 'Hallo QuickRef.ME'
-  alert(text)
-</script>
-```
-
-#### Externes JavaScript
-
-```html
-<body>
-  ...
-
-  <script src="app.js"></script>
-</body>
-```
-
-### CSS in HTML
-
-```html
-<style type="text/css">
-  h1 {
-    color: purple;
-  }
-</style>
-```
-
-#### Externes Stylesheet
-
-```html
-<head>
-  ...
-  <link rel="stylesheet" href="style.css" />
-</head>
-```
-
 ---
 
 ## HTML5-Tags
