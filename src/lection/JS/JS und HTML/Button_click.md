@@ -37,27 +37,29 @@ Jetzt schreiben wir den Zauberspruch in unser Zauberbuch, das sind die `<script>
 
 Wenn du jetzt die Seite öffnest und auf den Knopf drückst, siehst du das kleine Pop-up-Fenster\!
 
----
+## 3. Den Button-Text verändern ✍️
 
-## 3\. Den Button-Text verändern ✍️
-
-Was, wenn der Knopf nach dem Klick seinen Text ändern soll? Wir können den Zauberspruch so anpassen, dass er den Knopf findet und seinen Text verändert. Dafür brauchen wir die `id` des Knopfs.
+Statt eine ID und getElementById zu verwenden, kann sich der Button selbst an die Funktion übergeben — mit this. So brauchst du keine ID.
 
 ```html
-<button id="meinButton" onclick="textAendern()">Klick mich für eine Überraschung!</button>
+<button onclick="textAendern(this)">Klick mich für eine Überraschung!</button>
 
 <script>
-  function textAendern() {
-    // Finde den Knopf mit der ID "meinButton"
-    let button = document.getElementById('meinButton')
-
-    // Ändere seinen Text!
-    button.innerText = 'Überraschung!'
+  function textAendern(btn) {
+    // "btn" ist das übergebene Button-Element
+    btn.innerText = 'Überraschung!'
   }
 </script>
 ```
 
-- `document.getElementById("meinButton")`: Das ist wie eine Suchanfrage an das Zauberbuch: „Finde mir das Element, das die ID `meinButton` hat\!“
-- `button.innerText = "Überraschung!"`: Das bedeutet: Nimm den Text (`innerText`) vom gefundenen Knopf (`button`) und ändere ihn zu „Überraschung\!“.
+`<button onclick="textAendern(this)"> Klick mich für eine Überraschung!</button>`
+Dies ist ein HTML-Button. Das Attribut `onclick` sorgt dafür, dass beim Klick die Funktion `textAendern` aufgerufen wird. Mit `this` wird das aktuelle Button-Element an die Funktion übergeben.
 
-Wenn du jetzt auf den Knopf klickst, wird sein Text magisch von „Klick mich für eine Überraschung\!“ zu **„Überraschung\!“**\! ✨
+`<script> ... </script>`
+Hier steht JavaScript-Code, der im Browser ausgeführt wird.
+
+`function textAendern(btn) { ... }`
+Dies ist die Funktionsdefinition. Die Funktion heißt textAendern und nimmt einen Parameter btn entgegen. Dieser Parameter ist das Button-Element, das beim Klick übergeben wurde.
+
+`btn.innerText = 'Überraschung!'`
+Mit dieser Zeile wird der Text des Buttons geändert. `btn.innerText` greift auf den sichtbaren Text des Buttons zu und setzt ihn auf `„Überraschung!“`.
