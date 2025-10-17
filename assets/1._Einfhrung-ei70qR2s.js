@@ -1,0 +1,30 @@
+const e=`# 🚀 Einführung in Tailwind CSS
+
+**Tailwind CSS** ist ein Werkzeug, das dir hilft, Webseiten schöner zu machen – und das ganz einfach! Statt viele eigene CSS-Regeln zu schreiben, benutzt du kleine, fertige Klassen direkt im HTML. Damit kannst du zum Beispiel Farben, Abstände oder Schriftarten einstellen, ohne extra CSS-Dateien zu schreiben. So bleibt dein Code übersichtlich und du siehst schnell, was sich ändert.
+
+### So startest du mit Tailwind CSS
+
+Das ist ganz einfach\\! Du brauchst nur diese beiden Zeilen in den \`<head>\`-Bereich deiner HTML-Datei zu kopieren. Die erste Zeile holt daisyUi und die zweite Tailwind CSS, die zweite holt daisyUI.
+
+\`\`\`html
+<link
+  href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<script src="https://cdn.tailwindcss.com"><\/script>
+\`\`\`
+
+## 🎨 Wie verändert man das Styling mit Tailwind?
+
+In Tailwind CSS passt du das Aussehen deiner Elemente an, indem du ihnen spezielle Klassen gibst. Jede Klasse steht für eine bestimmte Eigenschaft, zum Beispiel eine Farbe, einen Abstand oder eine Schriftgröße.
+
+Hier ein Beispiel:
+
+\`\`\`html
+<button class="bg-blue-500 text-white px-4 py-2 rounded">Klick mich!</button>
+\`\`\`
+
+In diesem Beispiel sorgt \`bg-blue-500\` für einen blauen Hintergrund, \`text-white\` für weiße Schrift, \`px-4 py-2\` für Innenabstände und \`rounded\` für abgerundete Ecken.  
+So kannst du das Styling direkt im HTML steuern, ohne eigene CSS-Regeln zu schreiben.
+`;export{e as default};

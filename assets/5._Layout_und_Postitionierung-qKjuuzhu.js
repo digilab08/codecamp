@@ -1,0 +1,150 @@
+const e=`# 🛠️ Flexbox und Grid – Baue deine eigene Bühne!
+
+Stell dir vor, du bist ein Bühnenbauer und möchtest deine Schauspieler (Elemente) ganz genau anordnen. Mit **Flexbox** und **Grid** von Tailwind CSS kannst du das super einfach machen! Hier lernst du, wie du deine Elemente wie Bausteine auf der Bühne verteilst.
+
+---
+
+## 🎯 Flexbox – Die flexible Reihe
+
+Mit \`flex\` kannst du Elemente wie Tänzer in einer Reihe oder Spalte anordnen. Du bestimmst, wie sie stehen, wie viel Platz sie bekommen und wie sie sich bewegen.
+
+### Beispiel: Eine Reihe von Boxen
+
+\`\`\`html
+<div class="flex bg-gray-100 p-4">
+  <div class="w-16 h-16 bg-blue-400 m-2"></div>
+  <div class="w-16 h-16 bg-red-400 m-2"></div>
+  <div class="w-16 h-16 bg-green-400 m-2"></div>
+</div>
+\`\`\`
+
+---
+
+### 📏 Justify – Wie stehen die Tänzer in der Reihe?
+
+Mit \`justify-...\` bestimmst du, wie die Boxen **horizontal** verteilt werden.
+
+| Klasse            | Was passiert?                               |
+| ----------------- | ------------------------------------------- |
+| \`justify-start\`   | Alle stehen ganz links                      |
+| \`justify-center\`  | Alle stehen in der Mitte                    |
+| \`justify-end\`     | Alle stehen ganz rechts                     |
+| \`justify-between\` | Erster links, letzter rechts, Rest verteilt |
+| \`justify-around\`  | Gleich viel Platz um jede Box               |
+
+**Beispiel:**
+
+\`\`\`html
+<div class="flex justify-between bg-gray-100 p-4">
+  <div class="w-16 h-16 bg-blue-400"></div>
+  <div class="w-16 h-16 bg-red-400"></div>
+  <div class="w-16 h-16 bg-green-400"></div>
+</div>
+\`\`\`
+
+---
+
+### 🧍 Items – Wie stehen die Tänzer in der Höhe?
+
+Mit \`items-...\` bestimmst du, wie die Boxen **vertikal** ausgerichtet werden.
+
+| Klasse          | Was passiert?            |
+| --------------- | ------------------------ |
+| \`items-start\`   | Alle stehen oben         |
+| \`items-center\`  | Alle stehen in der Mitte |
+| \`items-end\`     | Alle stehen unten        |
+| \`items-stretch\` | Alle werden gleich hoch  |
+
+**Beispiel:**
+
+\`\`\`html
+<div class="flex items-end h-32 bg-gray-100 p-4">
+  <div class="w-16 h-8 bg-blue-400"></div>
+  <div class="w-16 h-16 bg-red-400"></div>
+  <div class="w-16 h-24 bg-green-400"></div>
+</div>
+\`\`\`
+
+### ↔️↕️ Flex Direction – Reihe oder Spalte?
+
+Mit \`flex-row\` und \`flex-col\` bestimmst du, ob deine Elemente **nebeneinander** (in einer Reihe) oder **untereinander** (in einer Spalte) angeordnet werden.
+
+| Klasse     | Was passiert?                            |
+| ---------- | ---------------------------------------- |
+| \`flex-row\` | Elemente stehen nebeneinander (Standard) |
+| \`flex-col\` | Elemente stehen untereinander            |
+
+**Beispiel:**
+
+\`\`\`html
+<!-- Reihe (Standard) -->
+<div class="flex flex-row bg-gray-100 p-4">
+  <div class="w-16 h-16 bg-blue-400 m-2"></div>
+  <div class="w-16 h-16 bg-red-400 m-2"></div>
+  <div class="w-16 h-16 bg-green-400 m-2"></div>
+</div>
+
+<!-- Spalte -->
+<div class="flex flex-col bg-gray-100 p-4 mt-4">
+  <div class="w-16 h-16 bg-blue-400 m-2"></div>
+  <div class="w-16 h-16 bg-red-400 m-2"></div>
+  <div class="w-16 h-16 bg-green-400 m-2"></div>
+</div>
+\`\`\`
+
+### Flexbox Spiel
+
+> 🎮 **Flexbox üben:** Es gibt ein cooles Spiel, mit dem du Flexbox spielerisch lernen kannst:  
+> [Knights of the Flexbox Table](https://knightsoftheflexboxtable.com/) – Werde zum Flexbox-Ritter und meistere die Dungeonbühne!
+
+---
+
+## 🟩 Grid – Das Schachbrett
+
+Mit \`grid\` kannst du ein richtiges Gitter bauen, wie ein Schachbrett. Du bestimmst, wie viele Spalten und Reihen es gibt.
+
+### Beispiel: Ein 3x2-Gitter
+
+\`\`\`html
+<div class="grid grid-cols-3 gap-4 bg-gray-100 p-4">
+  <div class="h-16 bg-blue-400"></div>
+  <div class="h-16 bg-red-400"></div>
+  <div class="h-16 bg-green-400"></div>
+  <div class="h-16 bg-yellow-400"></div>
+  <div class="h-16 bg-purple-400"></div>
+  <div class="h-16 bg-pink-400"></div>
+</div>
+\`\`\`
+
+---
+
+### 📏 Grid Justify & Items
+
+Auch im Grid kannst du die Ausrichtung bestimmen:
+
+| Klasse                 | Was passiert?                |
+| ---------------------- | ---------------------------- |
+| \`justify-items-start\`  | Inhalt in jeder Zelle links  |
+| \`justify-items-center\` | Inhalt in jeder Zelle mittig |
+| \`justify-items-end\`    | Inhalt in jeder Zelle rechts |
+
+| Klasse         | Was passiert?              |
+| -------------- | -------------------------- |
+| \`items-start\`  | Inhalt oben in der Zelle   |
+| \`items-center\` | Inhalt mittig in der Zelle |
+| \`items-end\`    | Inhalt unten in der Zelle  |
+
+**Beispiel:**
+
+\`\`\`html
+<div class="grid grid-cols-3 items-end justify-items-center h-32 bg-gray-100 p-4">
+  <div class="h-8 w-8 bg-blue-400"></div>
+  <div class="h-16 w-8 bg-red-400"></div>
+  <div class="h-24 w-8 bg-green-400"></div>
+</div>
+\`\`\`
+
+---
+
+**Tipp:** Probiere die Klassen aus und schau, wie sich die Boxen bewegen! So wirst du zum Bühnenprofi für Webseiten.
+`;export{e as default};

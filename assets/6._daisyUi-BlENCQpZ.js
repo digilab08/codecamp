@@ -1,0 +1,33 @@
+const e=`# ✨ daisyUI: Magische Bausteine für deine Website\\!
+
+Stell dir vor, du hast eine Kiste voller fertiger, wunderschöner Legosteine. Du musst sie nicht mehr selbst bauen\\! Genau das ist **daisyUI** für deine Website. Es ist ein Aufsatz für Tailwind CSS, der dir fertige Komponenten wie Buttons, Karten oder Menüs gibt, damit du nicht alles von Grund auf neu machen musst.
+
+### Deine ersten Zauber-Buttons
+
+Mit daisyUI kannst du jetzt ganz einfach einen Button erstellen. Anstatt viele Klassen zu tippen, brauchst du nur eine einzige\\! Probiere es aus:
+
+\`\`\`html
+<button class="btn">Standard Button</button>
+<button class="btn btn-primary">Wichtigster Button</button>
+<button class="btn btn-secondary">Zweiter Button</button>
+<button class="btn btn-accent">Ein besonderer Button</button>
+\`\`\`
+
+### Viele Komponenten zum Ausprobieren
+
+Schau dir **alle Bausteine** an, die daisyUI für dich hat\\! Du findest sie hier: [Alle daisyUI Komponenten](https://daisyui.com/components/button/)
+
+### Wechsle die Farbe deiner Website
+
+DaisyUI hat viele verschiedene **Themes** (Farbdesigns). Du kannst deine ganze Website mit nur einem Klick in einem neuen Look erstrahlen lassen! Um ein Theme auszuwählen, fügst du das Attribut \`data-theme\` zum \`<body>\`-Tag hinzu.
+
+Das zusätzliche Klassen-Attribut \`min-h-screen\` sorgt dafür, dass der Body mindestens die volle Höhe des Bildschirms einnimmt. So sieht deine Seite immer ordentlich aus, auch wenn wenig Inhalt vorhanden ist. Achte drauf das deine Seite immer nur einen \`<body>\`-Tag haben darf
+
+\`\`\`html
+<body data-theme="dark" class="min-h-screen">
+  ...deine Website hier...
+</body>
+\`\`\`
+
+Probiere doch mal ein paar andere Themes aus, wie \`light\`, \`cupcake\` oder \`emerald\`. Du kannst alle Themes auf der **offiziellen daisyUI Themes Seite** sehen und ausprobieren: [daisyUI Themes](https://daisyui.com/docs/themes/)
+`;export{e as default};
