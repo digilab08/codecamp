@@ -5,7 +5,7 @@ const router = useRouter()
 const route = useRoute()
 
 function goToLections() {
-  router.push(`${route.path}/lections`)
+  router.push(`lection`)
 }
 </script>
 
