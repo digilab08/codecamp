@@ -18,6 +18,10 @@ const props = defineProps({
     type: String,
     default: 'Richtige Antwort!',
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(['success', 'failure'])
@@ -60,12 +64,12 @@ const submitAnswer = () => {
           v-model="inputValue"
           type="text"
           @keyup.enter="submitAnswer"
-          :disabled="resultSuccess"
+          :disabled="resultSuccess || disabled"
         />
         <button
           class="btn btn-primary join-item"
           @click="submitAnswer"
-          :disabled="!inputValue || resultSuccess"
+          :disabled="!inputValue || resultSuccess || disabled"
         >
           Antwort überprüfen
         </button>

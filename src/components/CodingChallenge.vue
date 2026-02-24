@@ -20,6 +20,14 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  language: {
+    type: String,
+    default: 'javascript',
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(['success', 'pointsChanged'])
@@ -46,15 +54,15 @@ const successMessage = computed(
       <div class="points-badge">Punkte: {{ currentPoints }}</div>
     </div>
 
-    <CodeBlock :code="code" />
+    <CodeBlock :code="code" :language="language" />
     <div class="w-full flex justify-center">
       <AnswerInput
-        ref="answerInputRef"
         :question="question"
         :correct-answer="correctAnswer"
         :success-message="successMessage"
         @success="handleSuccess"
         @failure="handleFailure"
+        :disabled="disabled"  
       />
     </div>
   </div>
