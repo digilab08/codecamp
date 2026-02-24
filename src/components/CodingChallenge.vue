@@ -1,12 +1,21 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, watch } from 'vue'
 import CodeBlock from './CodeBlock.vue'
 import AnswerInput from './AnswerInput.vue'
+import { usePointStorage } from '@/composables/usePointStorage'
 
 const props = defineProps({
   maxPoints: {
     type: Number,
     required: true,
+  },
+  storageName: {
+    type: String,
+    default: '',
+  },
+  storageKey: {
+    type: String,
+    default: 'points-by-name',
   },
   code: {
     type: String,
@@ -32,26 +41,42 @@ const props = defineProps({
 
 const emit = defineEmits(['success', 'pointsChanged'])
 
-const currentPoints = ref(props.maxPoints)
+const { entries, setPoints } = usePointStorage(props.storageKey)
 
-const handleSuccess = () => {
-  emit('success', currentPoints.value)
+if (entries.value[props.storageName] === undefined) {
+  setPoints(props.storageName, { availablePoints: props.maxPoints, receivedPoints: -1 })
 }
 
-const handleFailure = () => {
-  currentPoints.value = currentPoints.value / 2
-  emit('pointsChanged', currentPoints.value)
+const points = entries.value[props.storageName]
+const isSolved = computed(() => points.receivedPoints !== -1)
+
+function handleSuccess() {
+  console.log(points.availablePoints)
+  points.receivedPoints = points.availablePoints
+  console.log(points.receivedPoints)
+  emit('success', points.receivedPoints)
+}
+
+function handleFailure() {
+  let nextPoints = points.availablePoints / 2
+  if (nextPoints < 1) {
+    nextPoints = 1
+  }
+  points.availablePoints = nextPoints
+  emit('pointsChanged', nextPoints)
 }
 
 const successMessage = computed(
-  () => 'Richtige Antwort! ' + currentPoints.value + ' Punkte erhalten.',
+  () => 'Richtige Antwort! ' + points.receivedPoints + ' Punkte erhalten.',
 )
 </script>
 
 <template>
   <div class="coding-challenge-container">
     <div class="w-full flex justify-end">
-      <div class="points-badge">Punkte: {{ currentPoints }}</div>
+      <div class="points-badge" :class="{ 'bg-success': isSolved }">
+        Punkte: {{ points.availablePoints }}
+      </div>
     </div>
 
     <CodeBlock :code="code" :language="language" />
@@ -62,7 +87,7 @@ const successMessage = computed(
         :success-message="successMessage"
         @success="handleSuccess"
         @failure="handleFailure"
-        :disabled="disabled"  
+        :disabled="points.receivedPoints !== -1 || disabled"
       />
     </div>
   </div>
