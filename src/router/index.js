@@ -24,6 +24,22 @@ const router = createRouter({
       name: 'Lection',
       component: () => import('../views/LectionView.vue'),
     },
+    {
+      path: '/js-basics',
+      component: () => import('../views/JsBasicsView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'JSBasicsOverview',
+          component: () => import('../views/JsBasicsOverviewView.vue'),
+        },
+        {
+          path: 'variablen',
+          name: 'JSBasicsVariablen',
+          component: () => import('../views/JsBasicsVariablesView.vue'),
+        },
+      ],
+    },
   ],
 })
 
