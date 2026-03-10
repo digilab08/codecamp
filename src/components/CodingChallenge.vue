@@ -1,5 +1,5 @@
 <script setup>
-import { computed, watch } from 'vue'
+import { computed, watchEffect } from 'vue'
 import CodeBlock from './CodeBlock.vue'
 import AnswerInput from './AnswerInput.vue'
 import { usePointStorage } from '@/composables/usePointStorage'
@@ -41,33 +41,45 @@ const props = defineProps({
 
 const emit = defineEmits(['success', 'pointsChanged'])
 
-const { entries, setPoints } = usePointStorage(props.storageKey)
+const DEFAULT_POINTS = -1
 
-if (entries.value[props.storageName] === undefined) {
-  setPoints(props.storageName, { availablePoints: props.maxPoints, receivedPoints: -1 })
-}
+const { getPoints, setPoints, setAvailablePoints, setReceivedPoints } = usePointStorage(
+  props.storageKey,
+)
 
-const points = entries.value[props.storageName]
-const isSolved = computed(() => points.receivedPoints !== -1)
+watchEffect(() => {
+  if (!props.storageName) {
+    return
+  }
+
+  if (getPoints(props.storageName) === undefined) {
+    setPoints(props.storageName, { availablePoints: props.maxPoints, receivedPoints: DEFAULT_POINTS })
+  }
+})
+
+const points = computed(
+  () => getPoints(props.storageName) ?? { availablePoints: props.maxPoints, receivedPoints: DEFAULT_POINTS },
+)
+
+const isSolved = computed(() => points.value.receivedPoints !== DEFAULT_POINTS)
 
 function handleSuccess() {
-  console.log(points.availablePoints)
-  points.receivedPoints = points.availablePoints
-  console.log(points.receivedPoints)
-  emit('success', points.receivedPoints)
+  const nextReceivedPoints = points.value.availablePoints
+  setReceivedPoints(props.storageName, nextReceivedPoints)
+  emit('success', nextReceivedPoints)
 }
 
 function handleFailure() {
-  let nextPoints = points.availablePoints / 2
+  let nextPoints = points.value.availablePoints / 2
   if (nextPoints < 1) {
     nextPoints = 1
   }
-  points.availablePoints = nextPoints
+  setAvailablePoints(props.storageName, nextPoints)
   emit('pointsChanged', nextPoints)
 }
 
 const successMessage = computed(
-  () => 'Richtige Antwort! ' + points.receivedPoints + ' Punkte erhalten.',
+  () => 'Richtige Antwort! ' + points.value.receivedPoints + ' Punkte erhalten.',
 )
 </script>
 

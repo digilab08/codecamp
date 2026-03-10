@@ -22,13 +22,17 @@ const normalizeMap = (pointMap = {}) =>
 
 export function usePointStorage(storageKey = 'points-by-name', initialValue = {}) {
 	const pointsByName = useStorage(storageKey, normalizeMap(initialValue))
+	pointsByName.value = normalizeMap(pointsByName.value)
 
 	const entries = computed(() => pointsByName.value)
 
 	const getPoints = (name) => pointsByName.value[name]
 
 	const setPoints = (name, points) => {
-		pointsByName.value[name] = normalizeEntry(points)
+		pointsByName.value = {
+			...pointsByName.value,
+			[name]: normalizeEntry(points),
+		}
 	}
 
 	const setAvailablePoints = (name, availablePoints) => {
