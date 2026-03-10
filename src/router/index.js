@@ -31,12 +31,12 @@ const router = createRouter({
         {
           path: '',
           name: 'JSBasicsOverview',
-          component: () => import('../views/JsBasicsOverviewView.vue'),
+          component: () => import('../views/JsBasics/OverviewView.vue'),
         },
         {
           path: 'variablen',
           name: 'JSBasicsVariablen',
-          component: () => import('../views/JsBasicsVariablesView.vue'),
+          component: () => import('../views/JsBasics/VariablesView.vue'),
         },
       ],
     },
