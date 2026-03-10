@@ -34,9 +34,9 @@ const router = createRouter({
           component: () => import('../views/JsBasics/OverviewView.vue'),
         },
         {
-          path: 'variablen',
-          name: 'JSBasicsVariablen',
-          component: () => import('../views/JsBasics/VariablesView.vue'),
+          path: ':topicId',
+          name: 'JSBasicsTopic',
+          component: () => import('../views/JsBasics/TopicView.vue'),
         },
       ],
     },
