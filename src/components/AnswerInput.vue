@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 const props = defineProps({
   question: {
@@ -28,11 +28,16 @@ const emit = defineEmits(['success', 'failure'])
 
 const inputValue = ref('')
 const resultSuccess = ref(false)
-const message = ref('')
+const hasSubmitted = ref(false)
+
+const message = computed(() => {
+  if (!hasSubmitted.value) return ''
+  return resultSuccess.value ? props.successMessage : props.errorMessage
+})
 
 watch(inputValue, (newValue, oldValue) => {
   if (newValue !== oldValue) {
-    message.value = ''
+    hasSubmitted.value = false
   }
 })
 
@@ -44,11 +49,11 @@ const submitAnswer = () => {
 
   if (isCorrect) {
     resultSuccess.value = true
-    message.value = props.successMessage
+    hasSubmitted.value = true
     emit('success', { value: val, correct: true })
   } else {
     resultSuccess.value = false
-    message.value = props.errorMessage
+    hasSubmitted.value = true
     emit('failure', { value: val, correct: false })
   }
 }
