@@ -307,13 +307,239 @@ let isSame = count === textCount;`,
       {
         id: 'bool-14',
         title: 'Wiederholung mit und/oder',
-        text: 'Du kannst Vergleiche und Verknuepfungen kombinieren. Achte darauf, welche Teilbedingungen `true` sind.',
+        text: 'Du kannst Vergleiche und Verknüpfungen kombinieren. Achte darauf, welche Teilbedingungen `true` sind.',
         code: `let score = 6;
 let bonus = 1;
 let passed = score >= 7 || (score + bonus >= 7 && bonus > 0);`,
         question: 'Welchen Wert hat passed?',
         correctAnswer: 'true',
         maxPoints: 10,
+      },
+    ],
+  },
+  {
+    id: 'kontrollstrukturen',
+    title: 'Kontrollstrukturen: if, else if, else',
+    storagePrefix: 'js-basics-kontrollstrukturen',
+    challenges: [
+      {
+        id: 'ctrl-1',
+        title: 'if wird ausgeführt',
+        text: 'Ein `if`-Block wird nur ausgeführt, wenn die Bedingung `true` ist.',
+        code: `let score = 7;
+let result = 'offen';
+
+if (score > 5) {
+  result = 'bestanden';
+}`,
+        question: 'Welchen Wert hat result am Ende?',
+        correctAnswer: 'bestanden',
+        maxPoints: 5,
+      },
+      {
+        id: 'ctrl-2',
+        title: 'if wird nicht ausgeführt',
+        text: 'Wenn die Bedingung `false` ist, bleibt der alte Wert unverändert.',
+        code: `let score = 3;
+let result = 'offen';
+
+if (score > 5) {
+  result = 'bestanden';
+}`,
+        question: 'Welchen Wert hat result am Ende?',
+        correctAnswer: 'offen',
+        maxPoints: 5,
+      },
+      {
+        id: 'ctrl-3',
+        title: 'if mit else',
+        text: 'Mit `else` legst du fest, was passieren soll, wenn die Bedingung nicht passt.',
+        code: `let lives = 0;
+let status = '';
+
+if (lives > 0) {
+  status = 'spielen';
+} else {
+  status = 'game over';
+}`,
+        question: 'Welchen Wert hat status?',
+        correctAnswer: 'game over',
+        maxPoints: 5,
+      },
+      {
+        id: 'ctrl-4',
+        title: 'if mit else (zweite Variante)',
+        text: 'Wiederholung: Genau ein Zweig von `if`/`else` wird ausgeführt.',
+        code: `let hasKey = true;
+let door = 'zu';
+
+if (hasKey) {
+  door = 'offen';
+} else {
+  door = 'zu';
+}`,
+        question: 'Welchen Wert hat door?',
+        correctAnswer: 'offen',
+        maxPoints: 5,
+      },
+      {
+        id: 'ctrl-5',
+        title: 'else if Grundidee',
+        text: 'Mit `else if` kannst du mehrere Fälle nacheinander pruefen.',
+        code: `let points = 8;
+let grade = '';
+
+if (points >= 10) {
+  grade = 'A';
+} else if (points >= 7) {
+  grade = 'B';
+} else {
+  grade = 'C';
+}`,
+        question: 'Welchen Wert hat grade?',
+        correctAnswer: 'B',
+        maxPoints: 8,
+      },
+      {
+        id: 'ctrl-6',
+        title: 'else if mit drei Fällen',
+        text: 'Die Bedingungen werden von oben nach unten geprüft. Der erste passende Fall gewinnt.',
+        code: `let temperature = 2;
+let weather = '';
+
+if (temperature >= 25) {
+  weather = 'heiss';
+} else if (temperature >= 10) {
+  weather = 'mild';
+} else if (temperature >= 0) {
+  weather = 'kalt';
+} else {
+  weather = 'eisig';
+}`,
+        question: 'Welchen Wert hat weather?',
+        correctAnswer: 'kalt',
+        maxPoints: 8,
+      },
+      {
+        id: 'ctrl-7',
+        title: 'Reihenfolge bei else if',
+        text: 'Auch wenn mehrere Bedingungen wahr sein können, wird nur der erste passende Zweig ausgeführt.',
+        code: `let age = 16;
+let ticket = '';
+
+if (age >= 18) {
+  ticket = 'erwachsen';
+} else if (age >= 16) {
+  ticket = 'jugend';
+} else if (age >= 12) {
+  ticket = 'kind';
+} else {
+  ticket = 'mini';
+}`,
+        question: 'Welchen Wert hat ticket?',
+        correctAnswer: 'jugend',
+        maxPoints: 8,
+      },
+      {
+        id: 'ctrl-8',
+        title: 'if mit logischer Verknüpfung',
+        text: 'Bedingungen können mit `&&` kombiniert werden.',
+        code: `let age = 14;
+let hasHelmet = true;
+let canRide = false;
+
+if (age >= 12 && hasHelmet) {
+  canRide = true;
+} else {
+  canRide = false;
+}`,
+        question: 'Welchen Wert hat canRide?',
+        correctAnswer: 'true',
+        maxPoints: 8,
+      },
+      {
+        id: 'ctrl-9',
+        title: 'if mit oder-Bedingung',
+        text: 'Mit `||` reicht mindestens eine passende Teilbedingung.',
+        code: `let hasCode = false;
+let hasKey = true;
+let isOpen = false;
+
+if (hasCode || hasKey) {
+  isOpen = true;
+} else {
+  isOpen = false;
+}`,
+        question: 'Welchen Wert hat isOpen?',
+        correctAnswer: 'true',
+        maxPoints: 8,
+      },
+      {
+        id: 'ctrl-10',
+        title: 'Verschachteltes if',
+        text: 'Ein `if` kann in einem anderen `if` stehen. So baust du feinere Entscheidungen.',
+        code: `let points = 9;
+let hasBonus = true;
+let reward = '';
+
+if (points >= 8) {
+  if (hasBonus) {
+    reward = 'gold';
+  } else {
+    reward = 'silber';
+  }
+} else {
+  reward = 'bronze';
+}`,
+        question: 'Welchen Wert hat reward?',
+        correctAnswer: 'gold',
+        maxPoints: 10,
+      },
+      {
+        id: 'ctrl-11',
+        title: 'Wiederholung: else if und Rechnungen',
+        text: 'Du kannst vor den Bedingungen rechnen und das Ergebnis danach mit `if`-Zweigen auswerten.',
+        code: `let base = 4;
+let bonus = 3;
+let total = base + bonus;
+let level = '';
+
+if (total >= 10) {
+  level = 'pro';
+} else if (total >= 7) {
+  level = 'fortgeschritten';
+} else {
+  level = 'starter';
+}`,
+        question: 'Welchen Wert hat level?',
+        correctAnswer: 'fortgeschritten',
+        maxPoints: 10,
+      },
+      {
+        id: 'ctrl-12',
+        title: 'Wiederholung: mehrere Schritte',
+        text: 'Bei längeren Beispielen helfen dir Zwischenwerte und genaues Lesen der Reihenfolge.',
+        code: `let energy = 5;
+let mode = '';
+
+if (energy > 7) {
+  mode = 'sprint';
+} else if (energy > 3) {
+  mode = 'run';
+} else {
+  mode = 'rest';
+}
+
+if (mode === 'run') {
+  energy = energy - 2;
+}
+
+if (energy <= 3) {
+  mode = 'rest';
+}`,
+        question: 'Welchen Wert hat mode am Ende?',
+        correctAnswer: 'rest',
+        maxPoints: 12,
       },
     ],
   },
