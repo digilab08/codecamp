@@ -21,11 +21,11 @@ function goToJsBasics() {
     <a href="https://knightsoftheflexboxtable.com/" class="btn btn-primary"
       >Knights of the Flexbox Table</a
     >
-    <a href="https://play.bakgame.de/PhishingQuiz" class="btn btn-primary">Phishing Quiz</a>
+    <!-- <a href="https://play.bakgame.de/PhishingQuiz" class="btn btn-primary">Phishing Quiz</a>
     <a
       href="https://wordwall.net/de/embed/e8a6e8d2220f48fcb38bc09ca5a30d57?themeId=22&templateId=45&fontStackId=1"
       class="btn btn-primary"
       >Schlag das Passwort</a
-    >
+    > -->
   </main>
 </template>
