@@ -729,6 +729,183 @@ console.log(total);`,
       },
     ],
   },
+  {
+    id: 'schleifen',
+    title: 'Schleifen: for und while',
+    storagePrefix: 'js-basics-schleifen',
+    challenges: [
+      {
+        id: 'loop-1',
+        title: 'Wiederholen mit for',
+        text: 'Eine Schleife wiederholt Code mehrfach. Hier wird der Text immer wieder ausgegeben. Der Zähler i startet bei 0 und wird nach jedem Durchlauf um 1 erhöht, solange er unter 3 bleibt.',
+        code: `for (let i = 0; i < 3; i++) {
+  console.log('Hi');
+}`,
+        question: 'Wie oft wird Hi auf der Konsole ausgegeben?',
+        correctAnswer: '3',
+        maxPoints: 5,
+      },
+      {
+        id: 'loop-2',
+        title: 'for mit Zähler',
+        text: 'Der Zähler i startet bei 1 und wird nach jedem Durchlauf um 1 erhöht.',
+        code: `for (let i = 1; i <= 4; i++) {
+  console.log(i);
+}`,
+        question: 'Was wird beim letzten Durchlauf auf der Konsole ausgegeben?',
+        correctAnswer: '4',
+        maxPoints: 5,
+      },
+      {
+        id: 'loop-3',
+        title: 'for in 2er-Schritten',
+        text: 'Du kannst den Zähler auch in größeren Schritten verändern.',
+        code: `for (let i = 0; i <= 5; i = i + 2) {
+  console.log(i);
+}`,
+        question: 'Was wird beim zweiten Durchlauf auf der Konsole ausgegeben?',
+        correctAnswer: '2',
+        maxPoints: 5,
+      },
+      {
+        id: 'loop-4',
+        title: 'Summe mit for',
+        text: 'In einer Schleife kannst du Werte Schritt für Schritt aufsummieren.',
+        code: `let sum = 0;
+
+for (let i = 1; i <= 3; i++) {
+  sum = sum + i;
+}`,
+        question: 'Welchen Wert hat sum am Ende?',
+        correctAnswer: '6',
+        maxPoints: 8,
+      },
+      {
+        id: 'loop-5',
+        title: 'Text in Schleife aufbauen',
+        text: 'Mit einer Schleife kannst du auch Strings nach und nach zusammensetzen.',
+        code: `let text = '';
+
+for (let i = 0; i < 3; i++) {
+  text = text + '*';
+}`,
+        question: 'Welchen Wert hat text am Ende?',
+        correctAnswer: '***',
+        maxPoints: 8,
+      },
+      {
+        id: 'loop-6',
+        title: 'Erste while-Schleife',
+        text: 'Eine while-Schleife läuft, solange die Bedingung true ist.',
+        code: `let count = 0;
+
+while (count < 3) {
+  count = count + 1;
+}`,
+        question: 'Welchen Wert hat count am Ende?',
+        correctAnswer: '3',
+        maxPoints: 8,
+      },
+      {
+        id: 'loop-7',
+        title: 'while mit Konsole',
+        text: 'Auch in while-Schleifen kann jeder Durchlauf etwas auf der Konsole ausgeben.',
+        code: `let lives = 2;
+
+while (lives > 0) {
+  console.log('Noch im Spiel');
+  lives = lives - 1;
+}`,
+        question: 'Wie oft wird Noch im Spiel auf der Konsole ausgegeben?',
+        correctAnswer: '2',
+        maxPoints: 8,
+      },
+      {
+        id: 'loop-8',
+        title: 'if in for-Schleifen',
+        text: 'Mit if kannst du in einer Schleife entscheiden, wann etwas ausgeführt wird.',
+        code: `for (let i = 1; i <= 4; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}`,
+        question: 'Was wird als erstes auf der Konsole ausgegeben?',
+        correctAnswer: '2',
+        maxPoints: 10,
+      },
+      {
+        id: 'loop-9',
+        title: 'Schleife mit break',
+        text: 'Mit break kannst du eine Schleife sofort beenden.',
+        code: `let stoppedAt = -1;
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    stoppedAt = i;
+    break;
+  }
+}`,
+        question: 'Welchen Wert hat stoppedAt am Ende?',
+        correctAnswer: '3',
+        maxPoints: 10,
+      },
+      {
+        id: 'loop-10',
+        title: 'Schleife mit continue',
+        text: 'Mit continue überspringst du den Rest des aktuellen Durchlaufs.',
+        code: `let total = 0;
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue;
+  }
+
+  total = total + i;
+}`,
+        question: 'Welchen Wert hat total am Ende?',
+        correctAnswer: '12',
+        maxPoints: 10,
+      },
+      {
+        id: 'loop-11',
+        title: 'Zwei Schleifen nacheinander',
+        text: 'Mehrere Schleifen hintereinander verändern denselben Wert Schritt für Schritt.',
+        code: `let points = 0;
+
+for (let i = 0; i < 2; i++) {
+  points = points + 2;
+}
+
+for (let i = 1; i < 3; i++) {
+  points = points + 1;
+}`,
+        question: 'Welchen Wert hat points am Ende?',
+        correctAnswer: '6',
+        maxPoints: 10,
+      },
+      {
+        id: 'loop-12',
+        title: 'Wiederholung mit while und if',
+        text: 'Bei längeren Beispielen hilft es, jeden Durchlauf sauber mitzudenken.',
+        code: `let energy = 7;
+
+while (energy > 1) {
+  energy = energy - 2;
+}
+
+let mode = '';
+
+if (energy === 1) {
+  mode = 'done';
+} else {
+  mode = 'stop';
+}`,
+        question: 'Welchen Wert hat mode am Ende?',
+        correctAnswer: 'done',
+        maxPoints: 14,
+      },
+    ],
+  },
 ]
 
 export const buildChallengeStorageName = (topic, challenge) =>
