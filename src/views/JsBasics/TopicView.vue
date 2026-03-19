@@ -42,7 +42,7 @@ const breadcrumbItems = computed(() => {
         <h2 class="card-title text-error">Thema nicht gefunden</h2>
         <p>Dieses JsBasics-Thema existiert nicht.</p>
         <RouterLink to="/js-basics" class="btn btn-outline btn-primary w-fit">
-          Zuruck zur Ubersicht
+          Zurück zur Übersicht
         </RouterLink>
       </div>
     </div>

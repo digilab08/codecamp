@@ -543,6 +543,192 @@ if (energy <= 3) {
       },
     ],
   },
+  {
+    id: 'funktionen',
+    title: 'Funktionen',
+    storagePrefix: 'js-basics-funktionen',
+    challenges: [
+      {
+        id: 'fn-1',
+        title: 'Erste Funktion',
+        text: 'Eine Funktion speichert Code. Dieser Code läuft erst beim Aufruf der Funktion.',
+        code: `function greet() {
+  console.log('Hallo');
+}
+
+greet();`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'Hallo',
+        maxPoints: 5,
+      },
+      {
+        id: 'fn-2',
+        title: 'Zwei Funktionen, aber nur eine aufgerufen',
+        text: 'Nur das Schreiben einer Funktion reicht nicht. Ohne Aufruf wird nichts ausgefuehrt.',
+        code: `function greet() {
+  console.log('Hallo');
+}
+function shout() {
+  console.log('Hey!');
+}  
+greet();`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'Hallo',
+        maxPoints: 5,
+      },
+      {
+        id: 'fn-3',
+        title: 'Mehrfach aufrufen',
+        text: 'Rufst du eine Funktion mehrfach auf, wird ihr Code auch mehrfach ausgefuehrt.',
+        code: `function beep() {
+  console.log('Beep');
+}
+
+beep();
+beep();`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'Beep Beep',
+        maxPoints: 5,
+      },
+      {
+        id: 'fn-4',
+        title: 'Erster Parameter',
+        text: 'Ein Parameter ist wie eine Platzhalter-Variable in der Funktion. Beim Aufruf setzt du den Wert ein.',
+        code: `function greet(name) {
+  console.log('Hallo ' + name);
+}
+
+greet('Lina');`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'Hallo Lina',
+        maxPoints: 5,
+      },
+      {
+        id: 'fn-5',
+        title: 'Zwei Parameter zusammen nutzen',
+        text: 'Eine Funktion kann mehrere Parameter haben. Hier werden zwei Zahlen addiert und ausgegeben.',
+        code: `function add(a, b) {
+  console.log(a + b);
+}
+
+add(3, 7);`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: '10',
+        maxPoints: 8,
+      },
+      {
+        id: 'fn-6',
+        title: 'Parameter mit Variablen',
+        text: 'Du kannst auch Variablen als Argumente übergeben. Die aktuellen Variablenwerte werden eingesetzt.',
+        code: `function showScore(points) {
+  console.log('Punkte: ' + points);
+}
+
+let score = 12;
+showScore(score);`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'Punkte: 12',
+        maxPoints: 8,
+      },
+      {
+        id: 'fn-7',
+        title: 'Reihenfolge bei mehreren Aufrufen',
+        text: 'Bei mehreren Aufrufen hilft es, Zeile für Zeile zu lesen und jeden Funktionsaufruf mitzudenken.',
+        code: `let fullText = "";
+function addText(text) {
+  fullText = fullText + text;
+}
+
+addText("Hallo");
+addText(" ");
+addText("Welt");
+addText("!");`,
+        question: 'Welchen Wert hat fullText am Ende?',
+        correctAnswer: 'Hallo Welt!',
+        maxPoints: 8,
+      },
+      {
+        id: 'fn-8',
+        title: 'Jetzt mit return',
+        text: 'Mit `return` gibt die Funktion einen Wert zurück. Diesen Wert kannst du danach ausgeben. Wenn `return` aufgerufen wird, endet die Funktion sofort.',
+        code: `function double(value) {
+  return value * 2;
+}
+
+let result = double(4);
+console.log(result);`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: '8',
+        maxPoints: 8,
+      },
+      {
+        id: 'fn-9',
+        title: 'return mit zwei Parametern',
+        text: 'Der Rueckgabewert kann auch aus mehreren Parametern berechnet werden.',
+        code: `function add(a, b) {
+  return a + b;
+}
+
+let total = add(2, 5);
+console.log(total);`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: '7',
+        maxPoints: 8,
+      },
+      {
+        id: 'fn-10',
+        title: 'if in Funktionen mit return',
+        text: 'Mit `if` kann eine Funktion je nach Bedingung unterschiedliche Werte zurückgeben.',
+        code: `function getRank(points) {
+  if (points >= 10) {
+    return 'pro';
+  }
+
+  return 'starter';
+}
+
+console.log(getRank(12));`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'pro',
+        maxPoints: 8,
+      },
+      {
+        id: 'fn-11',
+        title: 'if und else mit Boolean',
+        text: 'Funktionen koennen auch `true` oder `false` zurueckgeben, zum Beispiel fuer Regeln.',
+        code: `function hasPassed(score) {
+  if (score >= 5) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(hasPassed(4));`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: 'false',
+        maxPoints: 10,
+      },
+      {
+        id: 'fn-12',
+        title: 'Funktionen kombinieren',
+        text: 'Funktionen lassen sich kombinieren: Ein Ergebnis wird an die nächste Funktion uebergeben.',
+        code: `function addBonus(points) {
+  return points + 2;
+}
+
+function multiply(points) {
+  return points * 3;
+}
+
+let total = multiply(addBonus(4));
+console.log(total);`,
+        question: 'Was wird auf der Konsole ausgegeben?',
+        correctAnswer: '18',
+        maxPoints: 10,
+      },
+    ],
+  },
 ]
 
 export const buildChallengeStorageName = (topic, challenge) =>
