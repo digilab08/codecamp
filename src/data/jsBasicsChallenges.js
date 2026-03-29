@@ -35,6 +35,17 @@ level = 2;`,
       },
       {
         id: 'var-4',
+        title: 'let nur einmal verwenden',
+        text: 'Mit `let` erstellst du eine Variable genau einmal. Danach änderst du den Wert dieser Variable ohne `let`.',
+        code: `let name = 'Sam';
+// A) let name = 'Lia';
+// B) name = 'Lia';`,
+        question: 'Welche Variante ist richtig, um den Wert zu ändern (A oder B)?',
+        correctAnswer: 'B',
+        maxPoints: 8,
+      },
+      {
+        id: 'var-5',
         title: 'Wert ändern',
         text: 'Mit einer neuen Zuweisung kann sich der Inhalt einer Variable ändern.',
         code: `let points = 2;
@@ -44,7 +55,7 @@ points = points + 3;`,
         maxPoints: 5,
       },
       {
-        id: 'var-5',
+        id: 'var-6',
         title: 'Rechnen mit mehreren Variablen',
         text: 'Du kannst mehrere Variablen zusammen in einer Rechnung verwenden.',
         code: `let apples = 4;
@@ -55,7 +66,7 @@ let fruits = apples + pears;`,
         maxPoints: 5,
       },
       {
-        id: 'var-6',
+        id: 'var-7',
         title: 'Variablen weitergeben',
         text: 'Eine Variable kann den aktuellen Wert einer anderen Variable uebernehmen.',
         code: `let firstName = 'Lina';
@@ -712,7 +723,7 @@ console.log(hasPassed(4));`,
       {
         id: 'fn-12',
         title: 'Funktionen kombinieren',
-        text: 'Funktionen lassen sich kombinieren: Ein Ergebnis wird an die nächste Funktion uebergeben.',
+        text: 'Funktionen lassen sich kombinieren: Ein Ergebnis wird an die nächste Funktion übergeben.',
         code: `function addBonus(points) {
   return points + 2;
 }
