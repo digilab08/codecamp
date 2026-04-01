@@ -1,0 +1,256 @@
+const n=`# Einführung in HTML Styling mit CSS
+
+## Was ist HTML?
+
+HTML (HyperText Markup Language) ist die Sprache, mit der Webseiten aufgebaut werden. Mit HTML sagst du dem Browser, **was** auf der Seite ist. Zum Beispiel:
+
+- Überschriften
+- Texte
+- Bilder
+- Links
+
+Beispiel:
+
+\`\`\`html
+<h1>Meine erste Webseite</h1>
+<p>Hallo, ich lerne HTML!</p>
+\`\`\`
+
+Das sieht im Browser wie eine große Überschrift und ein Text aus.
+
+---
+
+## Was ist CSS?
+
+CSS (Cascading Style Sheets) ist die Sprache, mit der du bestimmst, **wie** etwas aussieht.
+
+Mit CSS kannst du zum Beispiel:
+
+- Farben ändern
+- Schriftgröße ändern
+- Hintergründe setzen
+- Abstände machen
+- Dinge zentrieren
+
+HTML ist also der **Inhalt**, CSS ist das **Aussehen**.
+
+---
+
+## Ein erstes CSS Beispiel
+
+HTML:
+
+\`\`\`html
+<p>Ich bin ein Text</p>
+\`\`\`
+
+CSS:
+
+\`\`\`css
+p {
+  color: red;
+}
+\`\`\`
+
+Jetzt ist der Text rot.
+
+---
+
+## Wie verbindet man CSS mit HTML?
+
+Es gibt auch Möglichkeiten, CSS **direkt in der HTML Datei** zu benutzen.
+
+### 1. Inline CSS
+
+Inline CSS bedeutet: Du schreibst das CSS **direkt in ein HTML Element**.
+
+Beispiel:
+
+\`\`\`html
+<p style="color: red;">Ich bin rot</p>
+\`\`\`
+
+Erklärung:
+
+- \`style\` ist ein Attribut
+- darin steht das CSS
+- \`color: red;\` macht den Text rot
+
+Das wirkt **nur auf dieses eine Element**.
+
+---
+
+### 2. CSS im style‑Tag im head
+
+Hier schreibst du CSS **oben in der HTML Datei**.
+
+Beispiel:
+
+\`\`\`html
+<html>
+  <head>
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Ich bin blau</p>
+  </body>
+</html>
+\`\`\`
+
+Erklärung:
+
+- Das \`<style>\` Tag ist im \`<head>\`
+- Darin steht normales CSS
+- Es wirkt auf **alle passenden Elemente**
+
+In diesem Beispiel werden **alle p Texte blau**.
+
+---
+
+### Wichtig zu wissen
+
+Inline CSS = nur ein Element
+style‑Tag = viele Elemente
+
+Der style‑Tag ist meistens besser als Inline CSS.
+
+---
+
+## Farben ändern
+
+Beispiel:
+
+\`\`\`css
+body {
+  background-color: lightblue;
+}
+\`\`\`
+
+Jetzt ist der Hintergrund hellblau.
+
+---
+
+## Schriftgröße ändern
+
+\`\`\`css
+p {
+  font-size: 20px;
+}
+\`\`\`
+
+Jetzt ist der Text größer.
+
+---
+
+## Klassen verwenden
+
+Klassen sind sehr wichtig. Sie helfen dir, bestimmte Dinge zu stylen.
+
+HTML:
+
+\`\`\`html
+<p class="wichtig">Das ist wichtig</p>
+\`\`\`
+
+CSS:
+
+\`\`\`css
+.wichtig {
+  color: red;
+}
+\`\`\`
+
+Der Text wird rot.
+
+Der Punkt vor dem Namen ist wichtig!
+
+---
+
+## Dinge zentrieren
+
+\`\`\`css
+body {
+  text-align: center;
+}
+\`\`\`
+
+Jetzt ist alles in der Mitte.
+
+---
+
+## Hintergrundfarbe für Boxen
+
+HTML:
+
+\`\`\`html
+<div class="box">Hallo</div>
+\`\`\`
+
+CSS:
+
+\`\`\`css
+.box {
+  background-color: yellow;
+  padding: 20px;
+}
+\`\`\`
+
+Jetzt hat die Box einen Hintergrund und Abstand.
+
+---
+
+## Zusammenfassung
+
+HTML = Inhalt
+CSS = Aussehen
+
+Mit CSS kannst du deine Webseite schön machen.
+
+Du kannst:
+
+- Farben ändern
+- Größen ändern
+- Hintergründe setzen
+- Dinge anordnen
+
+---
+
+## Warum ist CSS wichtig?
+
+Ohne CSS sehen Webseiten langweilig aus.
+
+Mit CSS kannst du:
+
+- coole Designs machen
+- eigene Webseiten gestalten
+- Spiele Webseiten bauen
+- später sogar Apps designen
+
+---
+
+## Kleiner Tipp
+
+Probieren ist der beste Weg zu lernen.
+
+Ändere Farben.
+Teste Größen.
+Experimentiere!
+
+So lernen alle Programmierer 🙂
+
+---
+
+## Mini Übung
+
+Versuche:
+
+- eine Überschrift blau zu machen
+- den Hintergrund grau zu machen
+- einen Text rot zu machen
+
+Du kannst das schaffen!
+`;export{n as default};
